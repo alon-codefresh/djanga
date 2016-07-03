@@ -17,7 +17,7 @@ steps:
     image-name: noamt/djanga
   
 
-  push-dockerhub:
-    type: push
-    candidate: ${{build-djanga}}
-    tag: awesomeness
+  #push-dockerhub:
+   # type: push
+  #  candidate: ${{build-djanga}}
+   # tag: awesomeness
