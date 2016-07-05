@@ -5,7 +5,7 @@ steps:
   unit-test:
     image: python:2-alpine
     commands: 
-      - exit 0
+      - echo jimbob
     environment:
       - JIM=JIM
       - PORT=9000
