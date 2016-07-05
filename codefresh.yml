@@ -1,24 +1,15 @@
 version: '1.0'
 
 steps:
-  
-  unit-test:
-    image: python:2-alpine
-    commands: 
-      - exit 0
-    environment:
-      - JIM=JIM
-      - PORT=9000
-      
-  build-djanga:
+  build-prj:
     type: build
-    description: It builds the Djanga Service
+    description: codefresh example
+    image-name: codefreshexamples/socketio
     dockerfile: Dockerfile
-    image-name: Noamt/Djangaz
-    tag: jimbob
-  
+    tag: latest
 
-  #push-dockerhub:
-   # type: push
-  #  candidate: ${{build-djanga}}
-   # tag: awesomeness
+  notify:
+    image: tutum/curl:latest
+    command:
+      - ls
+    description: codefresh example
