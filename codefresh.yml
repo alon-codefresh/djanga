@@ -14,7 +14,7 @@ steps:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: noamt/djangaz
+    image-name: Noamt/Djangaz
     tag: jimbob
   
 
