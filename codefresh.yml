@@ -5,10 +5,11 @@ steps:
   unit-test:
     image: python:2-alpine
     commands: 
-      - echo jimbob
+      - exit 1
     environment:
       - JIM=JIM
       - PORT=9000
+    fail-fast: false
       
   build-djanga:
     type: build
