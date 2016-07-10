@@ -9,7 +9,7 @@ steps:
     environment:
       - JIM=JIM
       - PORT=9000
-    fail-fast: false
+    #fail-fast: false
       
   build-djanga:
     type: build
