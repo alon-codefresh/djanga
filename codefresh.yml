@@ -21,6 +21,15 @@ steps:
     image-name: noamt/djanga
     tag: jimbob
   
+  test-comp:
+    type: composition
+    description: It composes the Djanga Service
+    composition: dja
+    composition-candidates:
+      - db:
+          image: postgres
+    composition-variables:
+      - key=value
 
   push-dockerhub:
     type: push
