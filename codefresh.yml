@@ -26,8 +26,8 @@ steps:
     description: It composes the Djanga Service
     composition: dja
     composition-candidates:
-      - db:
-          image: postgres
+      db:
+        image: postgres
     composition-variables:
       - key=value
 
