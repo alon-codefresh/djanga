@@ -26,8 +26,11 @@ steps:
     description: It composes the Djanga Service
     composition: dja
     composition-candidates:
-      db:
-        image: postgres
+      web:
+        image: 'noamt/djanga:master'
+        command:
+          >-
+          bash -c "echo \"Waiting for DB\";
     composition-variables:
       - key=value
 
