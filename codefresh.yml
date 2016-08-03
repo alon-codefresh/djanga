@@ -29,10 +29,10 @@ steps:
     composition-variables:
       - key=value
 
-  push-dockerhub:
-    type: push
-    candidate: ${{build-djanga}}
-    tag: awesomeness
-    credentials:
-      username: ${{username}}
-      password: ${{password}}
+  #push-dockerhub:
+   # type: push
+    #candidate: ${{build-djanga}}
+    #tag: awesomeness
+    #credentials:
+     # username: ${{username}}
+      #password: ${{password}}
