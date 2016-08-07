@@ -22,10 +22,10 @@ steps:
     type: composition
     description: It composes the Djanga Service
     composition: dja
-    #composition-candidates:
-    #  web:
-    #    image: 'noamt/djanga:master'
-    #    command: echo \"Waiting for DB\"
+    composition-candidates:
+      web:
+        image: 'noamt/djanga:master'
+        command: echo \"Waiting for DB\"
     composition-variables:
       - key=value
 
