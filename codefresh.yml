@@ -25,7 +25,7 @@ steps:
     composition-candidates:
       web:
         image: 'noamt/djanga:master'
-        command: echo \"Waiting for DB\"
+        command: exit 1
     composition-variables:
       - key=value
 
