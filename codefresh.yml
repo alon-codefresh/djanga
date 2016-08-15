@@ -15,19 +15,19 @@ steps:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: noamt/djanga
+    image-name: noamt/djanga1337
     tag: jimbob
   
-  #test-comp:
-  #  type: composition
-  #  description: It composes the Djanga Service
-  #  composition: dja
-  #  composition-candidates:
-  #    web:
-  #      image: 'noamt/djanga:master'
-  #      command: exit 1
-  #  composition-variables:
-  #    - key=value
+  test-comp:
+    type: composition
+    description: It composes the Djanga Service
+    composition: dja
+    composition-candidates:
+      web:
+        image: 'noamt/djanga1337:jimbob'
+        command: exit 0
+    composition-variables:
+      - key=value
 
   #push-dockerhub:
    # type: push
