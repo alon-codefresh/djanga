@@ -24,7 +24,7 @@ steps:
     composition: dja
     composition-candidates:
       web:
-        image: 'noamt/djanga1337'
+        image: 'mongo'
         command: exit 0
     composition-variables:
       - key=value
