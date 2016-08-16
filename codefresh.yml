@@ -2,21 +2,21 @@ version: '1.0'
 
 steps:
   
-  unit-test:
-    image: tutum/curl
-    commands: 
-      - exit 0
-    environment:
-      - JIM=JIM
-      - PORT=9000
-    fail-fast: false
+  #unit-test:
+  #  image: tutum/curl
+  #  commands: 
+  #    - exit 0
+  #  environment:
+  #    - JIM=JIM
+  #    - PORT=9000
+  #  fail-fast: false
       
-  build-djanga:
-    type: build
-    description: It builds the Djanga Service
-    dockerfile: Dockerfile
-    image-name: noamt/djanga1337
-    tag: jimbob
+  #build-djanga:
+  #  type: build
+  #  description: It builds the Djanga Service
+  #  dockerfile: Dockerfile
+  #  image-name: noamt/djanga1337
+  #  tag: jimbob
   
   test-comp:
     type: composition
