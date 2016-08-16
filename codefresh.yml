@@ -24,8 +24,10 @@ steps:
     composition: dja
     composition-candidates:
       web:
+        volumes:
+          - ${{CF_VOLUME}}:/mydata/
         image: 'mongo'
-        command: exit 0
+        command: ls -l /mydata/
     composition-variables:
       - key=value
 
