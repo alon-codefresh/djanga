@@ -2,34 +2,29 @@ version: '1.0'
 
 steps:
   
-  #unit-test:
-  #  image: tutum/curl
-  #  commands: 
-  #    - exit 0
-  #  environment:
-  #    - JIM=JIM
-  #    - PORT=9000
-  #  fail-fast: false
-      
-  #build-djanga:
-  #  type: build
-  #  description: It builds the Djanga Service
-  #  dockerfile: Dockerfile
-  #  image-name: noamt/djanga1337
-  #  tag: jimbob
+  build-djanga:
+    type: build
+    dockerfile: Dockerfile
+    image-name: noamt/djanga1338
+    tag: jimbob
   
-  test-comp:
-    type: composition
-    description: It composes the Djanga Service
-    composition: dja
-    composition-candidates:
-      web:
-        volumes:
-          - ${{CF_VOLUME}}:/mydata/
-        image: 'mongo'
-        command: ls -l /mydata/
-    composition-variables:
-      - key=value
+  unit-test:
+    image: ${{build-djanga}}
+    commands: 
+      - exit 0
+  
+  #test-comp:
+  #  type: composition
+  #  description: It composes the Djanga Service
+  #  composition: dja
+  #  composition-candidates:
+  #    web:
+  #      volumes:
+  #        - ${{CF_VOLUME}}:/mydata/
+  #      image: 'mongo'
+  #      command: ls -l /mydata/
+  #  composition-variables:
+  #    - key=value
 
   #push-dockerhub:
    # type: push
