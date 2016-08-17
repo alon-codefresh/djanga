@@ -9,7 +9,7 @@ steps:
     tag: jimbob
   
   unit-test:
-    image: ${{build-djanga}}
+    image: mongo:latest
     commands: 
       - exit 0
   
