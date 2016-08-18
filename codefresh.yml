@@ -9,7 +9,7 @@ steps:
     composition-candidates:
       test:
         image: 'instapartnersprivate/kraken:dev'
-        command: sh -c '/usr/local/sbt/bin/sbt -mem 4096 all-tests-with-coverage-upload'
+        command: sh -c '/usr/local/sbt/bin/sbt all-tests-with-coverage-upload'
         links:
           - 'authentication:authentication'
           - 'notifications:notifications'
