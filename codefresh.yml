@@ -5,7 +5,7 @@ steps:
 
   integration-tests:
     type: composition
-    composition: 'test'
+    composition: 'dja'
     composition-candidates:
       test:
         image: 'instapartnersprivate/kraken:dev'
