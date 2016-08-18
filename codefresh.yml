@@ -1,29 +1,35 @@
 version: '1.0'
 
 steps:
+  
+  build-djanga:
+    type: build
+    dockerfile: Dockerfile
+    image-name: noamt/djanga1338
+    tag: jimbob
+  
+  unit-test:
+    image: mongo:latest
+    commands: 
+      - exit 0
+  
+  #test-comp:
+  #  type: composition
+  #  description: It composes the Djanga Service
+  #  composition: dja
+  #  composition-candidates:
+  #    web:
+  #      volumes:
+  #        - ${{CF_VOLUME}}:/mydata/
+  #      image: 'mongo'
+  #      command: ls -l /mydata/
+  #  composition-variables:
+  #    - key=value
 
-
-  integration-tests:
-    type: composition
-    composition: 'dja'
-    composition-candidates:
-      test:
-        image: 'instapartnersprivate/kraken:dev'
-        command: sh -c '/usr/local/sbt/bin/sbt all-tests-with-coverage-upload'
-        links:
-        #  - 'authentication:authentication'
-        #  - 'notifications:notifications'
-        #  - 'mynoss:mynoss'
-          - 'mysql:mysql'
-        #  - 'flows:flows'
-        #  - 'microservices-router:microservices-router'
-        environment:
-          - CODACY_PROJECT_TOKEN=7b203505f09b4b20b552959c579fa616
-          - MYNOSS_DB_CONNECTION_URL='jdbc:mysql://mysql/'
-          - MYNOSS_DB_CONNECTION_USER=integrationUser
-          - MYNOSS_DB_CONNECTION_PASSWORD=integrationPassword
-          - NOTIFICATIONS_URL='http://microservices-router:8080'
-          - AUTHENTICATION_URL='http://microservices-router:8080'
-    composition-variables:
-      - BRANCH_NAME=dev
-      - ROUTER_BRANCH_NAME=dev
+  #push-dockerhub:
+   # type: push
+    #candidate: ${{build-djanga}}
+    #tag: awesomeness
+    #credentials:
+     # username: ${{username}}
+      #password: ${{password}}
