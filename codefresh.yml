@@ -10,13 +10,13 @@ steps:
       test:
         image: 'instapartnersprivate/kraken:dev'
         command: sh -c '/usr/local/sbt/bin/sbt all-tests-with-coverage-upload'
-        links:
-          - 'authentication:authentication'
-          - 'notifications:notifications'
-          - 'mynoss:mynoss'
-          - 'mysql:mysql'
-          - 'flows:flows'
-          - 'microservices-router:microservices-router'
+        #links:
+        #  - 'authentication:authentication'
+        #  - 'notifications:notifications'
+        #  - 'mynoss:mynoss'
+        #  - 'mysql:mysql'
+        #  - 'flows:flows'
+        #  - 'microservices-router:microservices-router'
         environment:
           - CODACY_PROJECT_TOKEN=7b203505f09b4b20b552959c579fa616
           - MYNOSS_DB_CONNECTION_URL='jdbc:mysql://mysql/'
