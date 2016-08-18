@@ -10,11 +10,11 @@ steps:
       test:
         image: 'instapartnersprivate/kraken:dev'
         command: sh -c '/usr/local/sbt/bin/sbt all-tests-with-coverage-upload'
-        #links:
+        links:
         #  - 'authentication:authentication'
         #  - 'notifications:notifications'
         #  - 'mynoss:mynoss'
-        #  - 'mysql:mysql'
+          - 'mysql:mysql'
         #  - 'flows:flows'
         #  - 'microservices-router:microservices-router'
         environment:
