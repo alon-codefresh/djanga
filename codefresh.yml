@@ -20,7 +20,7 @@ steps:
     composition-candidates:
       web:
         volumes:
-          - ${{CF_VOLUME}}:/mydata/
+          - data:/mydata/
         image: 'noamt/sbtest:latest'
         command: ls -l /mydata/
     composition-variables:
