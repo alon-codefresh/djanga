@@ -2,29 +2,29 @@ version: '1.0'
 
 steps:
   
-  build-djanga:
-    type: build
-    dockerfile: Dockerfile
-    image-name: noamt/djanga1338
-    tag: jimbob
+  #build-djanga:
+  #  type: build
+  #  dockerfile: Dockerfile
+  #  image-name: noamt/djanga1338
+  #  tag: jimbob
   
-  unit-test:
-    image: mongo:latest
-    commands: 
-      - exit 0
+  #unit-test:
+  #  image: mongo:latest
+  #  commands: 
+  #    - exit 0
   
-  #test-comp:
-  #  type: composition
-  #  description: It composes the Djanga Service
-  #  composition: dja
-  #  composition-candidates:
-  #    web:
-  #      volumes:
-  #        - ${{CF_VOLUME}}:/mydata/
-  #      image: 'mongo'
-  #      command: ls -l /mydata/
-  #  composition-variables:
-  #    - key=value
+  test-comp:
+    type: composition
+    description: It composes the Djanga Service
+    composition: dja
+    composition-candidates:
+      web:
+        volumes:
+          - ${{CF_VOLUME}}:/mydata/
+        image: 'mongo'
+        command: ls -l /mydata/
+    composition-variables:
+      - key=value
 
   #push-dockerhub:
    # type: push
