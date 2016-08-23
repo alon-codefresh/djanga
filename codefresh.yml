@@ -2,11 +2,11 @@ version: '1.0'
 
 steps:
   
-  #build-djanga:
-  #  type: build
-  #  dockerfile: Dockerfile
-  #  image-name: noamt/djanga1338
-  #  tag: jimbob
+  build-djanga:
+    type: build
+    dockerfile: Dockerfile
+    image-name: noamt/djanga1338
+    tag: jimbob
   
   #unit-test:
   #  image: mongo:latest
