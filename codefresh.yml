@@ -22,7 +22,7 @@ steps:
         volumes:
           - data:/mydata/
         image: 'noamt/sbtest:latest'
-        command: ls -l /mydata/
+        command: yes
     composition-variables:
       - key=value
 
