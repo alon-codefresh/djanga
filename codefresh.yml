@@ -13,18 +13,18 @@ steps:
   #  commands: 
   #    - exit 0
   
-  test-comp:
-    type: composition
-    description: It composes the Djanga Service
-    composition: dja
-    composition-candidates:
-      web:
-        volumes:
-          - data:/mydata/
-        image: 'noamt/sbtest:latest'
-        command: yes
-    composition-variables:
-      - key=value
+  #test-comp:
+  #  type: composition
+  #  description: It composes the Djanga Service
+  #  composition: dja
+  #  composition-candidates:
+  #    web:
+  #      volumes:
+  #        - data:/mydata/
+  #      image: 'noamt/sbtest:latest'
+  #      command: yes
+  #  composition-variables:
+  #    - key=value
 
   #push-dockerhub:
    # type: push
