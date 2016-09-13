@@ -15,6 +15,7 @@ steps:
       RUN pip install -r requirements.txt
       ADD . /code/
       RUN apt-get update && apt-get install -y netcat
+      
     image-name: noamt/djanga1338
     tag: jimbob
   
