@@ -19,28 +19,12 @@ steps:
     image-name: noamt/djanga1338
     tag: jimbob
   
-  unit-test:
-    image: noamt/djanga1338:tag1
-    commands: 
-      - exit 0
-  
-  #test-comp:
-  #  type: composition
-  #  description: It composes the Djanga Service
-  #  composition: dja
-  #  composition-candidates:
-  #    web:
-  #      volumes:
-  #        - data:/mydata/
-  #      image: 'noamt/sbtest:latest'
-  #      command: yes
-  #  composition-variables:
-  #    - key=value
-
-  #push-dockerhub:
-   # type: push
-    #candidate: ${{build-djanga}}
-    #tag: awesomeness
-    #credentials:
-     # username: ${{username}}
-      #password: ${{password}}
+  git-tag-literal:
+    type: git-tag
+    tag: this-works
+    
+  git-tag-image-id:
+    type: git-tag
+    tag: ${{build-djanga}}
+    
+    
