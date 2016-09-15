@@ -21,7 +21,7 @@ steps:
   
   git-tag-literal:
     type: git-tag
-    tag: this-works-too
+    tag: this-works-as-well
     
   git-tag-image-id:
     type: git-tag
