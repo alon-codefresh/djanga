@@ -6,7 +6,7 @@ steps:
     type: build
     dockerfile:
       content: |
-        FROM python:3.3
+        FROM python:3.5
         ENV PYTHONUNBUFFERED 1
         RUN mkdir /code
         WORKDIR /code
