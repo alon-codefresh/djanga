@@ -2,7 +2,7 @@ version: '1.0'
 
 steps:
   
-  build-djanga:
+  build_djanga:
     type: build
     dockerfile:
       content: |
@@ -16,15 +16,7 @@ steps:
         ADD . /code/
         RUN apt-get update && apt-get install -y netcat
       
-    image-name: noamt/djanga1338
+    image_name: noamt/djanga1338
     tag: jimbob
-  
-  git-tag-literal:
-    type: git-tag
-    tag: this-works-as-well
-    
-  git-tag-image-id:
-    type: git-tag
-    tag: ${{build-djanga}}
     
     
